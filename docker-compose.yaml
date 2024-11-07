@@ -1,0 +1,95 @@
+version: '3'
+
+services:
+  # Config Server
+  cfgsvr1:
+    extends:
+      file: ./config/docker-compose.yaml
+      service: cfgsvr1
+  cfgsvr2:
+    extends:
+      file: ./config/docker-compose.yaml
+      service: cfgsvr2
+  cfgsvr3:
+    extends:
+      file: ./config/docker-compose.yaml
+      service: cfgsvr3
+
+  # Mongos
+  mongos:
+    extends:
+      file: ./mongos/docker-compose.yaml
+      service: mongos
+
+  # Shard 1
+  shard1svr1:
+    extends: 
+      file: ./shard1/docker-compose.yaml
+      service: shard1svr1
+  shard1svr2:
+    extends: 
+      file: ./shard1/docker-compose.yaml
+      service: shard1svr2
+  shard1svr3:
+    extends: 
+      file: ./shard1/docker-compose.yaml
+      service: shard1svr3
+
+  # Shard 2
+  shard2svr1:
+    extends: 
+      file: ./shard2/docker-compose.yaml
+      service: shard2svr1
+  shard2svr2:
+    extends: 
+      file: ./shard2/docker-compose.yaml
+      service: shard2svr2
+  shard2svr3:
+    extends: 
+      file: ./shard2/docker-compose.yaml
+      service: shard2svr3
+
+  # Shard 3
+  shard3svr1:
+    extends: 
+      file: ./shard3/docker-compose.yaml
+      service: shard3svr1
+  shard3svr2:
+    extends: 
+      file: ./shard3/docker-compose.yaml
+      service: shard3svr2
+  shard3svr3:
+    extends: 
+      file: ./shard3/docker-compose.yaml
+      service: shard3svr3
+
+  # Shard 4
+  shard4svr1:
+    extends: 
+      file: ./shard4/docker-compose.yaml
+      service: shard4svr1
+  shard4svr2:
+    extends: 
+      file: ./shard4/docker-compose.yaml
+      service: shard4svr2
+  shard4svr3:
+    extends: 
+      file: ./shard4/docker-compose.yaml
+      service: shard4svr3
+      
+volumes:
+  cfgsvr1: {}
+  cfgsvr2: {}
+  cfgsvr3: {}
+  shard1svr1: {}
+  shard1svr2: {}
+  shard1svr3: {}
+  shard2svr1: {}
+  shard2svr2: {}
+  shard2svr3: {}
+  shard3svr1: {}
+  shard3svr2: {}
+  shard3svr3: {}
+  shard4svr1: {}
+  shard4svr2: {}
+  shard4svr3: {}
