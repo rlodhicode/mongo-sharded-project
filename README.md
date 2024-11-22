@@ -87,10 +87,8 @@ For our mongos router to work properly, we must notify it of the config cluster 
 
 5. Import the data to mongos, which will automatically shard the data across cluster (not in mongosh, use cmd/bash/etc.)
 
-   TODO CHECK IF THIS SHOULD BE 27017
-
    ```
-   mongoimport --uri "mongo://localhost:60000" --db csci5448 --collection sharded_demo --file "<path to the trips.json file>" --jsonArray
+   mongoimport --uri "mongodb://localhost:60000" --db csci5448 --collection sharded_demo --file "./data/trips.json" --jsonArray
    ```
 
 NOTE: Useful command `db.sharded_demo.getShardDistribution()` Useful to see the number of records split in node, bytes in nodes, hash ranges, etc. Great to see how much complexity is hidden away via the mongos facade.
